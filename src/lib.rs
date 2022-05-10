@@ -208,6 +208,7 @@ impl<I: Borrow<Keypair>> fmt::Debug for DebuggableKeypair<I> {
         let kind = match self.get_ref() {
             Keypair::Ed25519(_) => "Ed25519",
             Keypair::Rsa(_) => "Rsa",
+            Keypair::Secp256k1(_) => "Secp256k1",
         };
 
         write!(fmt, "Keypair::{}", kind)
